@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Carta al amor de mi vida</title>
+<style>
+:root{--sky1:#7fc4ff;--sky2:#d9f0ff;--xp1:#0a5be0;--xp2:#3d95ff;--sun:#ffd23f;--sun2:#ff9f1c;--ink:#10305c;--paper:#fffef5;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;min-height:100vh;font-family:Tahoma,"Trebuchet MS",Verdana,sans-serif;color:var(--ink);
+background:radial-gradient(ellipse at 20% 0%,#fff9 0,#fff0 40%),radial-gradient(ellipse at 90% 10%,#ffe98f88 0,#fff0 35%),linear-gradient(180deg,var(--sky1) 0,var(--sky2) 55%,#e9ffd9 100%) fixed;overflow-x:hidden}
+.wrap{max-width:760px;margin:0 auto;padding:18px 12px 40px}
+.header{margin-bottom:14px;padding:14px 18px;border-radius:14px;border:1px solid #fff;background:linear-gradient(180deg,#ffffffcc,#bfe4ffcc 50%,#8fcfffcc 51%,#c8ecffcc);box-shadow:0 4px 14px #0a5be055,inset 0 1px 0 #fff}
+.header h1{margin:0;font-size:1.9rem;color:var(--xp1);text-shadow:0 1px 0 #fff,0 0 10px #fff}
+.nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.btn{display:inline-block;padding:5px 14px;border-radius:99px;border:1px solid #c27a00;background:linear-gradient(180deg,#fff3b0,var(--sun) 50%,var(--sun2) 52%,#ffd86b);color:#5a3500;font:bold .85rem Tahoma,sans-serif;text-decoration:none;cursor:pointer;box-shadow:0 2px 4px #0003,inset 0 1px 0 #fff}
+.btn:hover{filter:brightness(1.08)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--xp1);outline-offset:2px}
+.win{border:2px solid var(--xp1);border-radius:10px 10px 6px 6px;background:var(--paper);box-shadow:0 8px 24px #0a2f7a55;overflow:hidden;margin-bottom:16px}
+.bar{display:flex;align-items:center;gap:8px;padding:6px 8px;color:#fff;font-weight:bold;text-shadow:1px 1px 1px #0a2f7a;background:linear-gradient(180deg,#5aa9ff 0,var(--xp1) 12%,#0a4fd0 85%,#0847b8)}
+.bar span.t{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ctl{display:flex;gap:3px}
+.ctl i{width:20px;height:20px;border-radius:4px;border:1px solid #fff;background:linear-gradient(180deg,#8ec5ff,#2a6fe8);display:block}
+.ctl i:last-child{background:linear-gradient(180deg,#ff9a7a,#d93a1a)}
+.body{padding:16px 18px}
+.meta{font-size:.8rem;color:#4a6a9a;margin-bottom:8px}
+.meta b{color:var(--sun2)}
+.txt{white-space:pre-wrap;line-height:1.65;font-size:1rem;max-width:68ch;overflow-wrap:anywhere}
+.status{display:block;padding:4px 10px;font-size:.75rem;background:linear-gradient(180deg,#ece9d8,#d6d2bd);border-top:1px solid #aaa;color:#444}
+.play iframe{display:block;width:100%;height:380px;border:0;border-radius:10px;background:#e9f4ff}
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.gal a{display:block;aspect-ratio:1;border:3px solid #fff;border-radius:6px;overflow:hidden;background:#cfe6ff;box-shadow:0 2px 8px #0a5be055}
+.gal img{display:block;width:100%;height:100%;object-fit:cover}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:16px;cursor:zoom-out}
+.lb[hidden]{display:none}
+.lb img{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px;box-shadow:0 0 30px #000;cursor:default}
+@media (min-width:700px){.gal{grid-template-columns:repeat(5,1fr)}}
+@media (max-width:900px){.header h1{font-size:1.5rem}.body{padding:12px}}
+@media (max-width:520px){.wrap{padding:10px 8px 30px}.play iframe{height:352px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="header">
+    <h1>CARTA AL AMOR DE MI VIDA</h1>
+    <nav class="nav">
+      <a class="btn" href="#inicio">Inicio</a>
+      <a class="btn" href="#playlist">Playlist</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="win" id="inicio">
+      <div class="bar"><span class="t">text1.txt - Bloc de notas</span><span class="ctl" aria-hidden="true"><i></i><i></i><i></i></span></div>
+      <div class="body">
+        <div class="meta">Publicado por <b>mí</b> · <span id="fecha"></span></div>
+        <div class="txt" id="post">Cargando…</div>
+      </div>
+      <span class="status" id="status">Listo</span>
+    </article>
+
+    <section class="win play" id="playlist">
+      <div class="bar"><span class="t">Reproductor - Mi playlist</span><span class="ctl" aria-hidden="true"><i></i><i></i><i></i></span></div>
+      <div class="body">
+        <iframe title="Playlist de Spotify" src="https://open.spotify.com/embed/playlist/2r1q44RI0oX1ARBkz6L056" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <p style="margin:10px 0 0"><a class="btn" href="https://open.spotify.com/playlist/2r1q44RI0oX1ARBkz6L056?si=027cfe83cd0b408d" target="_blank" rel="noopener">Abrir en Spotify</a></p>
+      </div>
+    </section>
+
+    <article class="win" id="texto2">
+      <div class="bar"><span class="t">text2.txt - Bloc de notas</span><span class="ctl" aria-hidden="true"><i></i><i></i><i></i></span></div>
+      <div class="body"><div class="txt" id="post2">Cargando…</div></div>
+    </article>
+
+    <section class="win" id="recuerdos">
+      <div class="bar"><span class="t">Recuerdos - Mis imágenes</span><span class="ctl" aria-hidden="true"><i></i><i></i><i></i></span></div>
+      <div class="body"><div class="gal" id="gal"></div></div>
+    </section>
+
+    <article class="win" id="texto3">
+      <div class="bar"><span class="t">text3.txt - Bloc de notas</span><span class="ctl" aria-hidden="true"><i></i><i></i><i></i></span></div>
+      <div class="body"><div class="txt" id="post3">Cargando…</div></div>
+    </article>
+  </main>
+</div>
+
+<script>
+var meses=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+var d=new Date();
+document.getElementById("fecha").textContent=d.getDate()+" de "+meses[d.getMonth()]+" de "+d.getFullYear();
+
+function cargar(archivo,id,cb){
+  fetch(archivo).then(function(r){if(!r.ok)throw 0;return r.text();}).then(function(t){
+    document.getElementById(id).textContent=t.trim();if(cb)cb(t);
+  }).catch(function(){document.getElementById(id).textContent="";});
+}
+cargar("text1.txt","post",function(t){document.getElementById("status").textContent="text1.txt · "+t.length+" caracteres";});
+cargar("text2.txt","post2");
+cargar("text3.txt","post3");
+
+// visor de imágenes
+var lb=document.createElement("div");lb.className="lb";lb.hidden=true;
+var lbi=new Image();lb.appendChild(lbi);document.body.appendChild(lb);
+function closeLb(){lb.hidden=true;lbi.removeAttribute("src");document.documentElement.style.overflow="";}
+function openLb(src,alt){lbi.src=src;lbi.alt=alt;lb.hidden=false;document.documentElement.style.overflow="hidden";}
+lb.addEventListener("click",function(e){if(e.target!==lbi)closeLb();});
+addEventListener("keydown",function(e){if(e.key==="Escape")closeLb();});
+
+// recuerdos/1.jpeg ... 10.jpeg
+var gal=document.getElementById("gal");
+for(var n=1;n<=10;n++){(function(n){
+  var a=document.createElement("a");a.href="recuerdos/"+n+".jpeg";a.target="_blank";a.rel="noopener";
+  var im=new Image();im.alt="Recuerdo "+n;im.loading="lazy";im.onerror=function(){a.remove();};im.src="recuerdos/"+n+".jpeg";
+  a.addEventListener("click",function(e){e.preventDefault();openLb(a.href,im.alt);});
+  a.appendChild(im);gal.appendChild(a);
+})(n);}
+</script>
+</body>
+</html>
